@@ -13,7 +13,7 @@ module.exports = {
                 callback(false)
             }
         })
-    },
+    }, 
 
     // get Product info by ProductID
     getProductInfo : function(productId, callback){

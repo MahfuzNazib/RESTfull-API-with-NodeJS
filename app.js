@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 
 const productsRoute = require('./api/routes/products');
 const orderRoute = require('./api/routes/orders');
+const usersRoute = require('./api/routes/users');
 
+app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -32,7 +34,7 @@ app.use((req, res, next) => {
 //Pass All Route
 app.use('/products', productsRoute);
 app.use('/order', orderRoute);
-
+app.use('/users',usersRoute);
 
 // Error Handing
 app.use((reqmres,next) => {
